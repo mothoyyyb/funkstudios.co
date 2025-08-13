@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Funk Studios - IT & Marketing Solutions" />
+  <title>Funk Studios</title>
+  <style>
+    /* ===== Global Styles ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #ffffff;
+      color: #003366;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      color: #003366;
+    }
+    p {
+      color: #004080;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: #003366;
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    nav a {
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #66b3ff;
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: linear-gradient(rgba(0,51,102,0.7), rgba(0,51,102,0.7)), url('https://via.placeholder.com/1920x800') center/cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #66b3ff;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #3399ff;
+    }
+
+    /* ===== Services Section ===== */
+    section {
+      padding: 4rem 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-card {
+      background: #e6f0ff;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* ===== Portfolio Section ===== */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .portfolio-item {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .portfolio-item:hover {
+      transform: scale(1.03);
+    }
+
+    /* ===== About Section ===== */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .about img {
+      flex: 1 1 400px;
+      border-radius: 8px;
+    }
+    .about-text {
+      flex: 1 1 400px;
+    }
+
+    /* ===== Testimonials ===== */
+    .testimonials {
+      background: #f0f8ff;
+      padding: 4rem 0;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .testimonial-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .testimonial-card p {
+      font-style: italic;
+    }
+    .testimonial-card h4 {
+      margin-top: 1rem;
+      color: #003366;
+    }
+
+    /* ===== Contact Section ===== */
+    .contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .contact-form button {
+      background: #003366;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background: #0055aa;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="container">
+      <nav>
+        <h1>Funk Studios</h1>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <h1>We Build & Grow Your Digital Presence</h1>
+    <p>Full-service IT & marketing solutions for ambitious brands worldwide.</p>
+    <a href="#contact" class="btn">Get in Touch</a>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section id="services" class="container">
+    <div class="section-title">
+      <h2>Our Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Website Development</h3>
+        <p>Responsive, modern websites tailored to your business needs.</p>
+      </div>
+      <div class="service-card">
+        <h3>SEO & Marketing</h3>
+        <p>Boost your visibility and drive more customers to your brand.</p>
+      </div>
+      <div class="service-card">
+        <h3>App Development</h3>
+        <p>Custom apps for Android, iOS, and web platforms.</p>
+      </div>
+      <div class="service-card">
+        <h3>Branding & Design</h3>
+        <p>Create a unique brand identity that stands out in the market.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Portfolio ===== -->
+  <section id="portfolio" class="container">
+    <div class="section-title">
+      <h2>Our Portfolio</h2>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300" alt="Project 1"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300" alt="Project 2"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300" alt="Project 3"></div>
+      <div class="portfolio-item"><img src="https://via.placeholder.com/400x300" alt="Project 4"></div>
+    </div>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section id="about" class="container">
+    <div class="section-title">
+      <h2>About Us</h2>
+    </div>
+    <div class="about">
+      <img src="https://via.placeholder.com/500x400" alt="About Funk Studios">
+      <div class="about-text">
+        <p>At Funk Studios, we’re more than just a service provider – we’re your digital growth partner. Our expert team combines creative design, advanced development, and strategic marketing to help you dominate your industry online.</p>
+        <p>From startups to established brands, we deliver tailored solutions that drive measurable results and long-term success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Testimonials ===== -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2>What Our Clients Say</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"Funk Studios completely transformed our online presence. Our website is stunning and sales have increased!"</p>
+          <h4>- Zayko F&B</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"The Funk Studios team is amazing! They handle everything from design to marketing with perfection."</p>
+          <h4>- Cash for Wheels</h4>
+        </div>
+        <div class="testimonial-card">
+          <p>"Professional, creative, and results-driven. Highly recommend them for any business."</p>
+          <h4>- GrabVapes.co.uk</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact" class="container">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 Funk Studios. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
